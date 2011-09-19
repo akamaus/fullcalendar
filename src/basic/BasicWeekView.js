@@ -19,10 +19,10 @@ function BasicWeekView(element, calendar) {
 	
 	function render(date, delta) {
 		if (delta) {
-			addDays(date, delta * 7);
+			addDays(date, delta * 7*2);
 		}
 		var start = addDays(cloneDate(date), -((date.getDay() - opt('firstDay') + 7) % 7));
-		var end = addDays(cloneDate(start), 7);
+		var end = addDays(cloneDate(start), 7*2);
 		var visStart = cloneDate(start);
 		var visEnd = cloneDate(end);
 		var weekends = opt('weekends');
@@ -39,7 +39,7 @@ function BasicWeekView(element, calendar) {
 		t.end = end;
 		t.visStart = visStart;
 		t.visEnd = visEnd;
-		renderBasic(1, 1, weekends ? 7 : 5, false);
+		renderBasic(2, 2, weekends ? 7 : 5, false);
 	}
 	
 	
